@@ -1,0 +1,14 @@
+# Kafka Topic: tweet-stream
+
+Message Schema:
+---------------
+- id: Integer
+- text: String (nullable)
+- created_at: ISO8601 timestamp string
+
+Example:
+{
+  "id": 12,
+  "text": "Amazing product",
+  "created_at": "2025-06-10T12:45:00"
+}
