@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+env/
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# System
+.DS_Store
+
+# Docker volumes
+**/tmp/
