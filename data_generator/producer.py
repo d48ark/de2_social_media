@@ -12,9 +12,9 @@ producer = KafkaProducer(
     value_serializer=lambda v: json.dumps(v).encode("utf-8")
 )
 
-# Faker verisi yükleniyor
+# Load Faker data
 df = pd.read_csv("simulated_posts.csv")
-df = df.dropna(subset=['content'])  # boş içerikleri çıkar
+df = df.dropna(subset=['content'])  # remove empty content
 
 for _, row in df.iterrows():
     post = {
@@ -26,6 +26,6 @@ for _, row in df.iterrows():
     }
     producer.send(KAFKA_TOPIC, post)
     print(f"Sent: {post}")
-    time.sleep(0.2)  # daha hızlı akış için azaltılabilir
+    time.sleep(0.2)  # can be reduced for faster stream
 
 producer.flush()
